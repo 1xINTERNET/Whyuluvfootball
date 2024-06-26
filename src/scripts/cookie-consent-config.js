@@ -53,6 +53,13 @@ run({
       flipButtons: false,
     },
   },
+  onConsent: () => {
+    window.dispatchEvent(new CustomEvent("ptupdate"));
+  },
+
+  onChange: () => {
+    window.dispatchEvent(new CustomEvent("ptupdate"));
+  },
   categories: {
     necessary: {
       readOnly: true,
