@@ -1,0 +1,88 @@
+---
+import Hero from "@components/Hero.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/global.css";
+import PartnerLinks from "@components/PartnerLinks.astro";
+import PrimaryLink from "@components/PrimaryLink.astro";
+import Section from "@components/Section.astro";
+import VideoPlayer from "@components/VideoPlayer.astro";
+import HowToHelp from "@components/HowToHelp.astro";
+import AboutUs from "@components/AboutUs.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<script src="../../scripts/collapsible.js"></script>
+
+<Layout title="Welcome to Whyuluvfootball">
+  <Hero />
+  <Section
+    backgroundColor="green"
+    eyebrow={t("goal.eyebrow")}
+    heading={t("goal.heading")}
+    id="our-goal"
+    links={[
+      {
+        href: "https://www.betterplace.me/why-do-you-love-football",
+        text: "Betterplace",
+      },
+      { href: "https://gofund.me/96424540", text: "GoFundMe" },
+    ]}
+  >
+    <div class="textalign-center">{t("goal.slot")}</div>
+  </Section>
+  <Section
+    backgroundColor="blue"
+    eyebrow={t("videos.eyebrow")}
+    heading={t("videos.heading")}
+    id="videos"
+  >
+    <VideoPlayer />
+  </Section>
+  <Section backgroundColor="green" id="partners">
+    <div
+      class="flex flex-col gap-6 sm:gap-12 items-center max-w-[800px] text-center"
+    >
+      <h2>{t("partners.title")}</h2>
+      <p>{t("partners.body")}</p>
+      <PartnerLinks />
+      <PrimaryLink
+        href="mailto:dirkvonmeer@icloud.com"
+        text={t("partners.button")}
+      />
+    </div>
+  </Section>
+  <Section
+    backgroundColor="blue"
+    eyebrow={t("help.eyebrow")}
+    id="how-to-help"
+    links={[
+      {
+        href: "https://www.betterplace.me/why-do-you-love-football",
+        text: "Betterplace",
+      },
+      { href: "https://gofund.me/96424540", text: "GoFundMe" },
+    ]}
+  >
+    <HowToHelp />
+  </Section>
+  <Section backgroundColor="green" eyebrow={t("about.eyebrow")} id="about-us">
+    <AboutUs />
+  </Section>
+  <Section
+    backgroundColor="blue"
+    contentImage="/images/goal.jpeg"
+    eyebrow={t("donate.eyebrow")}
+    heading={t("donate.heading")}
+    links={[
+      {
+        href: "https://www.betterplace.me/why-do-you-love-football",
+        text: "Betterplace",
+      },
+      { href: "https://gofund.me/96424540", text: "GoFundMe" },
+    ]}
+    subheading={t("donate.subheading")}
+  />
+</Layout>

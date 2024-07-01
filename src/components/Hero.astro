@@ -1,6 +1,10 @@
 ---
 import HeroImage from "../assets/images/HeroImage.astro";
 import NavigationBar from "@components/NavigationBar.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="relative w-full h-auto overflow-hidden" id="hero">
@@ -17,7 +21,9 @@ import NavigationBar from "@components/NavigationBar.astro";
     id="hero-text"
   >
     <h1>
-      Über <span class="bg-blue">300 Millionen</span> Kinder weltweit haben keinen Fussball.
+      {t("hero.over")}<span class="bg-blue px-3">{t("hero.300million")}</span>{
+        t("hero.childrenDontHaveAFootball")
+      }
     </h1>
   </div>
 </div>

@@ -1,5 +1,10 @@
 ---
 import HashtagWhyULoveFootball from "@components/HashtagWhyULoveFootball.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import LanguagePicker from "@components/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <nav class="bg-transparent">
@@ -37,22 +42,34 @@ import HashtagWhyULoveFootball from "@components/HashtagWhyULoveFootball.astro";
         class="font-medium text-3xl px-4 pt-14 flex flex-col xl:p-0 xl:text-xl xl:flex-row gap-8 xl:gap-12"
       >
         <li>
-          <a href="/#our-goal" class="block text-green">Unsere Goals</a>
+          <a href={`/${lang}/#our-goal`} class="block text-green"
+            >{t("nav.goal")}</a
+          >
         </li>
         <li>
-          <a href="/#videos" class="block text-green">Videos</a>
+          <a href={`/${lang}/#videos`} class="block text-green"
+            >{t("nav.videos")}</a
+          >
         </li>
         <li>
-          <a href="/#partners" class="block text-green">Partner</a>
+          <a href={`/${lang}/#partners`} class="block text-green"
+            >{t("nav.partners")}</a
+          >
         </li>
         <li>
-          <a href="/#how-to-help" class="block text-green">Mithelfen</a>
+          <a href={`/${lang}/#help`} class="block text-green">{t("nav.help")}</a
+          >
         </li>
         <li>
-          <a href="/#about-us" class="block text-green">Über uns</a>
+          <a href={`/${lang}/#about`} class="block text-green"
+            >{t("nav.about")}</a
+          >
         </li>
       </ul>
     </div>
+  </div>
+  <div class="container mx-auto px-4">
+    <LanguagePicker />
   </div>
 </nav>
 

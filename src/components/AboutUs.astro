@@ -1,36 +1,129 @@
 ---
+import { getLangFromUrl } from "@i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<div class="sm:px-8 lg:py-12 lg:px-8">
-  <p>
-    Hallo zusammen, liebe Fußballfans!
-  </p>
-  <p>
-    <img src="/images/dirk-von-meer.300.jpeg" class="float-left pr-6 pb-6" loading="eager"/>
-    Ich bin Dirk, einer der Initiatoren und Unterstützer unseres Projekts WHY DO YOU LOVE FOOTBALL? Wie kam es dazu? Im Januar ist mein bester Freund Constantin gestorben. Wir hatten viele gemeinsame Träume, darunter eine Spendenaktion zur EM, da wir beide große Fußballfans sind. Nach einer traurigen Zeit beschloss ich im März, unser Vorhaben umzusetzen.
-  </p>
-  <p>
-    Mit der Unterstützung vieler Menschen konnten wir das projekt THE EURO 2024 – A FESTIVAL OF LOVE erfolgreich umsetzen. Ihr und Eure tollen Ideen haben das möglich gemacht. Jetzt sind wir dabei unser Projekt bekannt zu machen, um unserZiel 100.000 Fußbälle armen Kindern und Jugendlichen zu schenken, zu erreichen.
-  </p>
-  <div class="collapsible">
-    <p>
-      Ich habe immer gerne soziale Projekte mit anderen Menschen umgesetzt.<span class="expander italic">.. mehr anzeigen</span>
-    </p>
-    <p class="expanded">
-      In den neunziger Jahren habe ich die Aktion Kartoffelsäcke e.V. für Kriegsopfer in Bosnien und Kroatien entwickelt. Wir sammelten pro Aktionstag über 50 Tonnen Hilfsgüter. Beruflich arbeitete ich über 12 Jahre mit Unicef in Deutschland an verschiedenen Projekten. Später half ich beim Aufbau des Fundraisings für ProVeg International, wofür wir einen UNO-Preis gewannen. Besonders prägend war die Zusammenarbeit mit Christoph und Stefan von 1xINTERNET. Vor 25 Jahren entwickelten wir ONIUM – The Help Company und spendeten Einnahmen an Unicef und WWF. Jetzt arbeiten wir wieder zusammen am Projekt WHY DO YOU LOVE FOOTBALL? Einfach schön, dass wir wieder etwas Sinnvolles zusammen machen.
-    </p>
-    <p class="expanded">
-      Danke an alle, die schon mitlehfen, besonders Audrey, Claudia, Jana, Leandra, Malou, Sara, Abdulbaset, Ali, Axel, Bert, Christoph, Claus &amp; Claus, Eric, George, Linus, Markus, Matthias, Neel, Stefan, Robin, Rolf, Vahin und Constantin!
-    </p>
-    <p class="expanded">
-      Ich wünsche Euch eine schöne, sonnige und superspannende EM! Wenn Ihr Fragen habt, schreibt mir gern eine Nachricht: <a href="mailto://dirkvonmeer@icloud.com">dirkvonmeer@icloud.com</a>
-    </p>
-    <p class="expanded">
-      Euer Dirk
-    </p>
-    <p class="expanded">
-      PS: Wenn ihr Organisationen oder Fußballschulen kennt, die Bälle brauchen oder bei der Verteilung der Bälle helfen können, gebt mir bitte Bescheid.
-    </p>
-  </div>
-</div>
+{
+  lang === "de" ? (
+    <div class="sm:px-8 lg:py-12 lg:px-8">
+      <p>Hallo zusammen, liebe Fußballfans!</p>
+      <p>
+        <img
+          src="/images/dirk-von-meer.300.jpeg"
+          class="float-left pr-6 pb-6"
+          loading="eager"
+        />
+        Ich bin Dirk, einer der Initiatoren und Unterstützer unseres Projekts
+        WHY DO YOU LOVE FOOTBALL? Wie kam es dazu? Im Januar ist mein bester
+        Freund Constantin gestorben. Wir hatten viele gemeinsame Träume,
+        darunter eine Spendenaktion zur EM, da wir beide große Fußballfans sind.
+        Nach einer traurigen Zeit beschloss ich im März, unser Vorhaben
+        umzusetzen.
+      </p>
+      <p>
+        Mit der Unterstützung vieler Menschen konnten wir das projekt THE EURO
+        2024 – A FESTIVAL OF LOVE erfolgreich umsetzen. Ihr und Eure tollen
+        Ideen haben das möglich gemacht. Jetzt sind wir dabei unser Projekt
+        bekannt zu machen, um unserZiel 100.000 Fußbälle armen Kindern und
+        Jugendlichen zu schenken, zu erreichen.
+      </p>
+      <div class="collapsible">
+        <p>
+          Ich habe immer gerne soziale Projekte mit anderen Menschen umgesetzt.
+          <span class="expander italic">.. mehr anzeigen</span>
+        </p>
+        <p class="expanded">
+          In den neunziger Jahren habe ich die Aktion Kartoffelsäcke e.V. für
+          Kriegsopfer in Bosnien und Kroatien entwickelt. Wir sammelten pro
+          Aktionstag über 50 Tonnen Hilfsgüter. Beruflich arbeitete ich über 12
+          Jahre mit Unicef in Deutschland an verschiedenen Projekten. Später
+          half ich beim Aufbau des Fundraisings für ProVeg International, wofür
+          wir einen UNO-Preis gewannen. Besonders prägend war die Zusammenarbeit
+          mit Christoph und Stefan von 1xINTERNET. Vor 25 Jahren entwickelten
+          wir ONIUM – The Help Company und spendeten Einnahmen an Unicef und
+          WWF. Jetzt arbeiten wir wieder zusammen am Projekt WHY DO YOU LOVE
+          FOOTBALL? Einfach schön, dass wir wieder etwas Sinnvolles zusammen
+          machen.
+        </p>
+        <p class="expanded">
+          Danke an alle, die schon mitlehfen, besonders Audrey, Claudia, Jana,
+          Leandra, Malou, Sara, Abdulbaset, Ali, Axel, Bert, Christoph, Claus
+          &amp; Claus, Eric, George, Linus, Markus, Matthias, Neel, Stefan,
+          Robin, Rolf, Vahin und Constantin!
+        </p>
+        <p class="expanded">
+          Ich wünsche Euch eine schöne, sonnige und superspannende EM! Wenn Ihr
+          Fragen habt, schreibt mir gern eine Nachricht:{" "}
+          <a href="mailto://dirkvonmeer@icloud.com">dirkvonmeer@icloud.com</a>
+        </p>
+        <p class="expanded">Euer Dirk</p>
+        <p class="expanded">
+          PS: Wenn ihr Organisationen oder Fußballschulen kennt, die Bälle
+          brauchen oder bei der Verteilung der Bälle helfen können, gebt mir
+          bitte Bescheid.
+        </p>
+      </div>
+    </div>
+  ) : (
+    <div class="sm:px-8 lg:py-12 lg:px-8">
+      <p>EN Hallo zusammen, liebe Fußballfans!</p>
+      <p>
+        <img
+          src="/images/dirk-von-meer.300.jpeg"
+          class="float-left pr-6 pb-6"
+          loading="eager"
+        />
+        Ich bin Dirk, einer der Initiatoren und Unterstützer unseres Projekts
+        WHY DO YOU LOVE FOOTBALL? Wie kam es dazu? Im Januar ist mein bester
+        Freund Constantin gestorben. Wir hatten viele gemeinsame Träume,
+        darunter eine Spendenaktion zur EM, da wir beide große Fußballfans sind.
+        Nach einer traurigen Zeit beschloss ich im März, unser Vorhaben
+        umzusetzen.
+      </p>
+      <p>
+        Mit der Unterstützung vieler Menschen konnten wir das projekt THE EURO
+        2024 – A FESTIVAL OF LOVE erfolgreich umsetzen. Ihr und Eure tollen
+        Ideen haben das möglich gemacht. Jetzt sind wir dabei unser Projekt
+        bekannt zu machen, um unserZiel 100.000 Fußbälle armen Kindern und
+        Jugendlichen zu schenken, zu erreichen.
+      </p>
+      <div class="collapsible">
+        <p>
+          Ich habe immer gerne soziale Projekte mit anderen Menschen umgesetzt.
+          <span class="expander italic">.. mehr anzeigen</span>
+        </p>
+        <p class="expanded">
+          In den neunziger Jahren habe ich die Aktion Kartoffelsäcke e.V. für
+          Kriegsopfer in Bosnien und Kroatien entwickelt. Wir sammelten pro
+          Aktionstag über 50 Tonnen Hilfsgüter. Beruflich arbeitete ich über 12
+          Jahre mit Unicef in Deutschland an verschiedenen Projekten. Später
+          half ich beim Aufbau des Fundraisings für ProVeg International, wofür
+          wir einen UNO-Preis gewannen. Besonders prägend war die Zusammenarbeit
+          mit Christoph und Stefan von 1xINTERNET. Vor 25 Jahren entwickelten
+          wir ONIUM – The Help Company und spendeten Einnahmen an Unicef und
+          WWF. Jetzt arbeiten wir wieder zusammen am Projekt WHY DO YOU LOVE
+          FOOTBALL? Einfach schön, dass wir wieder etwas Sinnvolles zusammen
+          machen.
+        </p>
+        <p class="expanded">
+          Danke an alle, die schon mitlehfen, besonders Audrey, Claudia, Jana,
+          Leandra, Malou, Sara, Abdulbaset, Ali, Axel, Bert, Christoph, Claus
+          &amp; Claus, Eric, George, Linus, Markus, Matthias, Neel, Stefan,
+          Robin, Rolf, Vahin und Constantin!
+        </p>
+        <p class="expanded">
+          Ich wünsche Euch eine schöne, sonnige und superspannende EM! Wenn Ihr
+          Fragen habt, schreibt mir gern eine Nachricht:{" "}
+          <a href="mailto://dirkvonmeer@icloud.com">dirkvonmeer@icloud.com</a>
+        </p>
+        <p class="expanded">Euer Dirk</p>
+        <p class="expanded">
+          PS: Wenn ihr Organisationen oder Fußballschulen kennt, die Bälle
+          brauchen oder bei der Verteilung der Bälle helfen können, gebt mir
+          bitte Bescheid.
+        </p>
+      </div>
+    </div>
+  )
+}

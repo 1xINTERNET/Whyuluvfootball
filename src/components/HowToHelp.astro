@@ -1,41 +1,103 @@
 ---
+import { getLangFromUrl } from "@i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<div class="text-center">
-  <p class="font-bold">Jeder kann mithelfen!</p>
-  <p>
-    Du kannst uns durch Posts auf liebsten Social Media Platformen helfen die Aktion unter dem Hashtab <span class="italic font-bold">#whyuluvfootball</span> bekannt zu machen.
-  </p>
-  <p>
-    Idealerweise verlinkst Du direkt eine der Spendenplatformen
-  </p>
-  <p>
-    <a class="underline" href="https://www.betterplace.me/why-do-you-love-football">https://www.betterplace.me/why-do-you-love-football</a>
-  </p>
-  <p>
-    oder
-  </p>
-  <p>
-    <a class="underline" href="https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love">https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love</a>
-  </p>
-  <p>
-    und unsere Webseite
-  </p>
-  <p>
-    <a class="underline" href="https://whyuluvfootball.world/">https://whyuluvfootball.world/</a>.
-  </p>
-  <p>
-    Gerne kannst Du auch ein kurzes Fanvideo drehen und sagen warum Du Fußball liebst.
-  </p>
-  <p>
-    Firmen und Vereine können natürlich auch mitmachen.
-  </p>
-  <p>
-    Schreibt mir gerne, wenn ihr Ideen habt: <a class="underline" href="mailto://dirkvonmeer@icloud.com">dirkvonmeer@icloud.com</a>
-  </p>
-  <p>
-    Und natürlich dürft ihr auch direkt spenden:
-  </p>
-  </p>
-</div>
+{
+  lang === "de" ? (
+    <div class="text-center">
+      <p class="font-bold">Jeder kann mithelfen!</p>
+      <p>
+        Du kannst uns durch Posts auf liebsten Social Media Platformen helfen
+        die Aktion unter dem Hashtab{" "}
+        <span class="italic font-bold">#whyuluvfootball</span> bekannt zu
+        machen.
+      </p>
+      <p>Idealerweise verlinkst Du direkt eine der Spendenplatformen</p>
+      <p>
+        <a
+          class="underline"
+          href="https://www.betterplace.me/why-do-you-love-football"
+        >
+          https://www.betterplace.me/why-do-you-love-football
+        </a>
+      </p>
+      <p>oder</p>
+      <p>
+        <a
+          class="underline"
+          href="https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love"
+        >
+          https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love
+        </a>
+      </p>
+      <p>und unsere Webseite</p>
+      <p>
+        <a class="underline" href="https://whyuluvfootball.world/">
+          https://whyuluvfootball.world/
+        </a>
+        .
+      </p>
+      <p>
+        Gerne kannst Du auch ein kurzes Fanvideo drehen und sagen warum Du
+        Fußball liebst.
+      </p>
+      <p>Firmen und Vereine können natürlich auch mitmachen.</p>
+      <p>
+        Schreibt mir gerne, wenn ihr Ideen habt:{" "}
+        <a class="underline" href="mailto://dirkvonmeer@icloud.com">
+          dirkvonmeer@icloud.com
+        </a>
+      </p>
+      <p>Und natürlich dürft ihr auch direkt spenden:</p>
+    </div>
+  ) : (
+    <div class="text-center">
+      <p class="font-bold">EN Jeder kann mithelfen!</p>
+      <p>
+        Du kannst uns durch Posts auf liebsten Social Media Platformen helfen
+        die Aktion unter dem Hashtab{" "}
+        <span class="italic font-bold">#whyuluvfootball</span> bekannt zu
+        machen.
+      </p>
+      <p>Idealerweise verlinkst Du direkt eine der Spendenplatformen</p>
+      <p>
+        <a
+          class="underline"
+          href="https://www.betterplace.me/why-do-you-love-football"
+        >
+          https://www.betterplace.me/why-do-you-love-football
+        </a>
+      </p>
+      <p>oder</p>
+      <p>
+        <a
+          class="underline"
+          href="https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love"
+        >
+          https://www.gofundme.com/f/why-do-you-love-football-the-euro-2024-a-festival-of-love
+        </a>
+      </p>
+      <p>und unsere Webseite</p>
+      <p>
+        <a class="underline" href="https://whyuluvfootball.world/">
+          https://whyuluvfootball.world/
+        </a>
+        .
+      </p>
+      <p>
+        Gerne kannst Du auch ein kurzes Fanvideo drehen und sagen warum Du
+        Fußball liebst.
+      </p>
+      <p>Firmen und Vereine können natürlich auch mitmachen.</p>
+      <p>
+        Schreibt mir gerne, wenn ihr Ideen habt:{" "}
+        <a class="underline" href="mailto://dirkvonmeer@icloud.com">
+          dirkvonmeer@icloud.com
+        </a>
+      </p>
+      <p>Und natürlich dürft ihr auch direkt spenden:</p>
+    </div>
+  )
+}

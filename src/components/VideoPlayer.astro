@@ -1,12 +1,16 @@
 ---
 import IconChevronRight from "@icons/IconChevronRight.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!--<div data-service="youtube" data-id="wFAazFeFgOY" data-autoscale></div>-->
 <div data-service="youtube" data-id="ltmYSwWXI7U" data-autoscale></div>
 <div class="max-w-80 sm:container">
   <div class="flex gap-3 items-center mb-3">
-    <span>Weitere videos</span>
+    <span>{t("videos.more")}</span>
   </div>
   <div class="relative">
     <div class="flex gap-3 overflow-x-scroll scrollbar-hide">

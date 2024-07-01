@@ -86,7 +86,7 @@
   }
 
   .expanded {
-    display: block
+    display: block;
   }
 
   .collapsible .expander {

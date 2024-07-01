@@ -1,0 +1,10 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+import { languages } from "@i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+
+const newLang = lang === "de" ? "en" : "de";
+---
+
+<div class="text-green"><a href={`/${newLang}/`}>{languages[newLang]}</a></div>
