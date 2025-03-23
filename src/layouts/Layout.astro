@@ -15,6 +15,15 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
   <head>
+    <script
+      is:inline
+      type="text/plain"
+      data-category="analytics"
+      data-service="Google Analytics"
+      data-type="text/partytown"
+      data-src="https://www.googletagmanager.com/gtag/js?id=G-E95B4HTX6G"
+    ></script>
+    <script src="../scripts/google-analytics.js"></script>
     <meta charset="UTF-8" />
     <meta name="description" content="Whyuluvfootball website" />
     <meta name="viewport" content="width=device-width" />
